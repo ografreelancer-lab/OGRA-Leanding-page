@@ -787,3 +787,49 @@ footer p {
     display: none;
   }
 }
+/* FIX: SHOW G AND R IN SIMPLE OGRA INTRO */
+.ribbon-top {
+  display: flex;
+  position: relative;
+  z-index: 3;
+  width: auto;
+  height: auto;
+  top: auto;
+  left: auto;
+  transform: none;
+  background: transparent;
+  box-shadow: none;
+  animation: none;
+}
+
+.top-ribbon-full {
+  display: none;
+}
+
+.top-ribbon-left,
+.top-ribbon-right {
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+  color: #fffdf8;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(90px, 18vw, 190px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -10px;
+  text-shadow: 0 12px 24px rgba(0, 0, 0, 0.28);
+}
+
+.top-ribbon-left {
+  left: auto;
+  order: 2;
+  transform: translateY(-110px) scale(0.7);
+  animation: ogra-letter-g 0.55s cubic-bezier(0.2, 0.9, 0.2, 1) 1.05s forwards;
+}
+
+.top-ribbon-right {
+  right: auto;
+  order: 3;
+  transform: translateY(110px) scale(0.7);
+  animation: ogra-letter-r 0.55s cubic-bezier(0.2, 0.9, 0.2, 1) 1.7s forwards;
+}
