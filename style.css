@@ -624,9 +624,9 @@ footer p {
   }
 }
 
-/* ===================================
-   OGRA OPENING ANIMATION — NEW CODE
-   =================================== */
+/* ==========================================
+   SIMPLE OGRA INTRO — CHOCOLATE BACKGROUND
+   ========================================== */
 
 .ogra-intro {
   position: fixed;
@@ -636,15 +636,15 @@ footer p {
   place-items: center;
   overflow: hidden;
   background:
-    radial-gradient(circle at 50% 35%, rgba(157, 95, 59, 0.32), transparent 35%),
+    radial-gradient(circle at 50% 35%, rgba(157, 95, 59, 0.33), transparent 35%),
     linear-gradient(135deg, #2a160f, #5a321f 48%, #2b1710);
-  animation: intro-exit 0.8s cubic-bezier(0.7, 0, 0.9, 0.5) 4.4s forwards;
+  animation: ogra-intro-exit 0.9s cubic-bezier(0.7, 0, 0.9, 0.5) 4.8s forwards;
 }
 
 .intro-grain {
   position: absolute;
   inset: 0;
-  opacity: 0.22;
+  opacity: 0.17;
   background-image:
     radial-gradient(rgba(255, 245, 230, 0.7) 0.7px, transparent 0.8px),
     radial-gradient(rgba(0, 0, 0, 0.5) 0.7px, transparent 0.8px);
@@ -654,118 +654,136 @@ footer p {
 }
 
 .intro-stage {
-  width: min(86vw, 680px);
-  height: 250px;
+  width: min(90vw, 860px);
   position: relative;
-  z-index: 1;
-}
-
-.ribbon {
-  position: absolute;
-  display: grid;
-  place-items: center;
-  color: #fffdf8;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(75px, 16vw, 150px);
-  font-weight: 900;
-  letter-spacing: -8px;
-  text-shadow: 0 8px 20px rgba(0, 0, 0, 0.23);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 25px);
+  padding-bottom: 28px;
 }
 
 .ribbon-left,
-.ribbon-right {
-  top: 48px;
-  width: 130px;
-  height: 145px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #ffffff, #e4ded6);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+.ribbon-right,
+.ribbon-top,
+.scissors {
+  display: none;
 }
 
-.ribbon-left {
-  left: 4%;
-  transform: translateX(-150vw) rotate(-55deg);
-  animation: ribbon-left-in 0.75s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
-}
-
-.ribbon-right {
-  right: 4%;
-  transform: translateX(150vw) rotate(55deg);
-  animation: ribbon-right-in 0.75s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
-}
-
-.ribbon-left span,
-.ribbon-right span {
-  position: relative;
-  z-index: 2;
-  color: #5b351f;
-}
-
-.ribbon-left span {
+.intro-stage::before {
+  content: "O";
   opacity: 0;
-}
-
-.ribbon-right span {
-  font-size: 0;
-}
-
-.ribbon-left::before,
-.ribbon-right::before {
-  position: absolute;
-  inset: 20px;
-  content: "";
-  border: 15px solid #5b351f;
-  border-radius: 50%;
-}
-
-.ribbon-right::after {
-  position: absolute;
-  width: 0;
-  height: 0;
-  content: "";
-  right: -35px;
-  bottom: 10px;
-  border-top: 58px solid transparent;
-  border-bottom: 58px solid transparent;
-  border-left: 55px solid #ffffff;
-  filter: drop-shadow(4px 3px 2px rgba(0, 0, 0, 0.14));
-}
-
-.ribbon-top {
-  top: -245px;
-  left: 50%;
-  width: 126px;
-  height: 260px;
-  transform: translateX(-50%);
-  animation: top-ribbon-down 0.75s cubic-bezier(0.2, 0.8, 0.2, 1) 1.1s forwards;
-}
-
-.top-ribbon-full {
-  position: absolute;
-  inset: 0;
-  border-radius: 0 0 24px 24px;
-  background: linear-gradient(90deg, #f8f8f4, #dcd7d0, #ffffff);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.24);
-  animation: ribbon-cut-hide 0.1s linear 2.32s forwards;
+  color: #fffdf8;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(90px, 18vw, 190px);
+  font-weight: 900;
+  letter-spacing: -10px;
+  text-shadow: 0 12px 24px rgba(0, 0, 0, 0.28);
+  transform: translateX(-120px) rotate(-15deg) scale(0.7);
+  animation: ogra-letter-o 0.55s cubic-bezier(0.2, 0.9, 0.2, 1) 0.35s forwards;
 }
 
 .top-ribbon-left,
 .top-ribbon-right {
-  position: absolute;
-  top: 37px;
+  position: relative;
   opacity: 0;
   color: #fffdf8;
-  font-size: clamp(75px, 16vw, 150px);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(90px, 18vw, 190px);
   font-weight: 900;
   line-height: 1;
-  text-shadow: 0 8px 20px rgba(0, 0, 0, 0.23);
+  letter-spacing: -10px;
+  text-shadow: 0 12px 24px rgba(0, 0, 0, 0.28);
 }
 
 .top-ribbon-left {
-  left: -16px;
-  animation: letter-g-show 0.35s ease 2.38s forwards;
+  order: 2;
+  transform: translateY(-110px) scale(0.7);
+  animation: ogra-letter-g 0.55s cubic-bezier(0.2, 0.9, 0.2, 1) 1.05s forwards;
 }
 
 .top-ribbon-right {
-  right: -25px;
-  animation:
+  order: 3;
+  transform: translateY(110px) scale(0.7);
+  animation: ogra-letter-r 0.55s cubic-bezier(0.2, 0.9, 0.2, 1) 1.7s forwards;
+}
+
+.intro-stage::after {
+  content: "A";
+  order: 4;
+  opacity: 0;
+  color: #fffdf8;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(90px, 18vw, 190px);
+  font-weight: 900;
+  letter-spacing: -10px;
+  text-shadow: 0 12px 24px rgba(0, 0, 0, 0.28);
+  transform: translateX(120px) rotate(15deg) scale(0.7);
+  animation: ogra-letter-a 0.55s cubic-bezier(0.2, 0.9, 0.2, 1) 2.35s forwards;
+}
+
+.intro-tagline {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: -20px;
+  width: 100%;
+  opacity: 0;
+  color: #f2d8bd;
+  transform: translateX(-50%) translateY(15px);
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(9px, 1.5vw, 13px);
+  font-weight: 800;
+  letter-spacing: 3px;
+  animation: ogra-tagline-show 0.45s ease 3.35s forwards;
+}
+
+@keyframes ogra-letter-o {
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(0) scale(1);
+  }
+}
+
+@keyframes ogra-letter-g {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes ogra-letter-r {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes ogra-letter-a {
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(0) scale(1);
+  }
+}
+
+@keyframes ogra-tagline-show {
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes ogra-intro-exit {
+  to {
+    visibility: hidden;
+    transform: translateY(110%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ogra-intro {
+    display: none;
+  }
+}
