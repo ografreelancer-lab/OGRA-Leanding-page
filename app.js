@@ -4,6 +4,7 @@ const soundButton = document.getElementById("soundButton");
 const sandLayer = document.getElementById("sandLayer");
 
 let soundEnabled = false;
+let audioContext = null;
 
 function showDemoMessage() {
   alert(
@@ -20,45 +21,78 @@ function showOrderMessage() {
   );
 }
 
-function playTone(audioContext, frequency, startTime, duration, volume, type) {
-  const oscillator = audioContext.createOscillator();
-  const gain = audioContext.createGain();
+async function getAudioContext() {
+  const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+
+  if (!AudioContextClass) {
+    return null;
+  }
+
+  if (!audioContext || audioContext.state === "closed") {
+    audioContext = new AudioContextClass();
+  }
+
+  if (audioContext.state === "suspended") {
+    await audioContext.resume();
+  }
+
+  return audioContext;
+}
+
+function playTone(context, frequency, startTime, duration, volume, type) {
+  const oscillator = context.createOscillator();
+  const gain = context.createGain();
 
   oscillator.type = type;
   oscillator.frequency.setValueAtTime(frequency, startTime);
 
   gain.gain.setValueAtTime(0.0001, startTime);
-  gain.gain.exponentialRampToValueAtTime(volume, startTime + 0.02);
+  gain.gain.exponentialRampToValueAtTime(volume, startTime + 0.015);
   gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
 
   oscillator.connect(gain);
-  gain.connect(audioContext.destination);
+  gain.connect(context.destination);
 
   oscillator.start(startTime);
   oscillator.stop(startTime + duration + 0.03);
 }
 
-function playIntroSound() {
-  const AudioContext = window.AudioContext || window.webkitAudioContext;
+async function playTestChime() {
+  const context = await getAudioContext();
 
-  if (!AudioContext) {
+  if (!context) {
     return;
   }
 
-  const audioContext = new AudioContext();
-  const now = audioContext.currentTime;
+  const now = context.currentTime;
 
-  playTone(audioContext, 280, now, 0.12, 0.06, "triangle");
-  playTone(audioContext, 190, now + 0.07, 0.16, 0.05, "sawtooth");
-  playTone(audioContext, 760, now + 0.26, 0.35, 0.07, "sine");
-  playTone(audioContext, 1020, now + 0.36, 0.42, 0.05, "sine");
+  playTone(context, 523.25, now, 0.18, 0.09, "sine");
+  playTone(context, 659.25, now + 0.11, 0.22, 0.08, "sine");
+  playTone(context, 783.99, now + 0.22, 0.3, 0.07, "triangle");
+}
 
-  setTimeout(() => {
-    audioContext.close();
-  }, 1200);
+async function playGlassBreakSound() {
+  const context = await getAudioContext();
+
+  if (!context) {
+    return;
+  }
+
+  const now = context.currentTime;
+
+  playTone(context, 310, now, 0.10, 0.07, "triangle");
+  playTone(context, 210, now + 0.06, 0.14, 0.06, "sawtooth");
+  playTone(context, 140, now + 0.14, 0.18, 0.04, "sawtooth");
+
+  playTone(context, 740, now + 0.26, 0.32, 0.08, "sine");
+  playTone(context, 1040, now + 0.36, 0.42, 0.06, "sine");
 }
 
 function createSandParticles() {
+  if (!sandLayer) {
+    return;
+  }
+
   const colors = ["#d7a54a", "#f4dfa3", "#8c552b", "#fff0c7", "#b77a2e"];
 
   for (let i = 0; i < 90; i += 1) {
@@ -85,11 +119,15 @@ function createSandParticles() {
 }
 
 if (soundButton) {
-  soundButton.addEventListener("click", () => {
+  soundButton.addEventListener("click", async () => {
     soundEnabled = true;
-    playIntroSound();
 
-    soundButton.innerHTML = "<span>✓</span> Intro sound enabled";
+    try {
+      await playTestChime();
+      soundButton.innerHTML = "<span>✓</span> Sound enabled";
+    } catch (error) {
+      soundButton.innerHTML = "<span>!</span> Browser blocked sound";
+    }
   });
 }
 
@@ -97,7 +135,7 @@ setTimeout(() => {
   createSandParticles();
 
   if (soundEnabled) {
-    playIntroSound();
+    playGlassBreakSound();
   }
 }, 5050);
 
