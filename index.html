@@ -3,16 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>OGRA AI — Your Website Sales Assistant</title>
-
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
 <body>
-
-  <!-- Split chocolate / white OGRA intro -->
   <div class="ogra-intro" id="ograIntro" aria-label="OGRA opening animation">
     <div class="intro-stage">
       <div class="intro-word" aria-label="OGRA">
@@ -28,7 +24,6 @@
     </div>
   </div>
 
-  <!-- Main OGRA landing page -->
   <div class="site-reveal">
     <header class="navbar">
       <a class="logo" href="#">
@@ -99,44 +94,8 @@
 
             <div class="chat-body">
               <div class="message bot-message">
-                Hi! I’m OGRA AI. I help businesses give website visitors instant answers.
-              </div>
-
-              <div class="message user-message">
-                What can OGRA do for my business?
-              </div>
-
-              <div class="message bot-message recommendation">
-                <strong>OGRA helps visitors take action.</strong>
-                <small>
-                  Answer FAQs · Explain services · Capture leads · Guide customers to WhatsApp, booking, or checkout
-                </small>
-                <button type="button" id="orderPreviewButton">
-                  Explore OGRA features →
-                </button>
-              </div>
-            </div>
-
-            <div class="chat-input-preview">
-              <span>Ask OGRA about your business...</span>
-              <b>➤</b>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="business-strip">
-        <p>BUILT FOR ONLINE SHOPS, SERVICES, AND GROWING BUSINESSES</p>
-
-        <div class="business-types">
-          <span>Shop</span>
-          <span>Store</span>
-          <span>Brand</span>
-          <span>Service</span>
-        </div>
-      </section>
-
-      <section class="features section-space" id="features">
+                Hi! I’m OGRA AI.
+                      <section class="features section-space" id="features">
         <div class="section-title">
           <p class="eyebrow">SMARTER CUSTOMER CONVERSATIONS</p>
 
@@ -187,3 +146,119 @@
         <div class="steps-grid">
           <article class="step-card">
             <span class="step-number">01</span>
+            <h3>Add your business details</h3>
+            <p>
+              Tell OGRA about your business, services, products, common questions,
+              pricing, delivery, and the actions you want customers to take.
+            </p>
+          </article>
+
+          <article class="step-card">
+            <span class="step-number">02</span>
+            <h3>Connect OGRA to your website</h3>
+            <p>
+              Add one simple widget to your site, then let OGRA welcome visitors
+              and answer questions around the clock.
+            </p>
+          </article>
+
+          <article class="step-card">
+            <span class="step-number">03</span>
+            <h3>Turn conversations into action</h3>
+            <p>
+              Guide customers to WhatsApp, booking, checkout, contact forms, or
+              whichever next step makes sense for your business.
+            </p>
+          </article>
+        </div>
+      </section>
+            <section class="demo-section section-space" id="demo">
+        <div class="demo-copy">
+          <p class="eyebrow">BUILT TO CONVERT</p>
+
+          <h2>
+            Help customers faster.
+            <br>
+            Grow your business smarter.
+          </h2>
+
+          <p>
+            OGRA is designed to make every website visit more useful. It gives
+            customers confident answers and helps your business capture more
+            high-intent conversations.
+          </p>
+
+          <a class="button primary-button" href="mailto:hello@ogra.ai">
+            Get early access <span>→</span>
+          </a>
+        </div>
+
+        <aside class="stats-card" aria-label="OGRA AI results preview">
+          <div>
+            <small>VISITOR QUESTIONS ANSWERED</small>
+            <strong>24/7</strong>
+            <span>Always available for your customers</span>
+          </div>
+
+          <div>
+            <small>SMARTER CUSTOMER JOURNEYS</small>
+            <strong>1 chat</strong>
+            <span>From question to the next best action</span>
+          </div>
+
+          <div>
+            <small>SETUP TIME</small>
+            <strong>Minutes</strong>
+            <span>Add your business context and go live</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="early-access">
+        <p class="eyebrow">OGRA AI IS COMING SOON</p>
+
+        <h2>Ready to turn more visitors into customers?</h2>
+
+        <p>
+          Join the early-access list and be among the first businesses to try
+          OGRA AI on your website.
+        </p>
+
+        <a class="button secondary-button" href="mailto:hello@ogra.ai">
+          Join early access <span>→</span>
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <a class="logo" href="#">
+        <span class="logo-mark">O</span>
+        <span>OGRA</span>
+        <em>AI</em>
+      </a>
+
+      <p>© 2026 OGRA AI. Your website’s AI sales assistant.</p>
+    </footer>
+  </div>
+
+  <script>
+    window.addEventListener("load", function () {
+      const intro = document.getElementById("ograIntro");
+
+      setTimeout(function () {
+        if (intro) {
+          intro.classList.add("intro-finished");
+        }
+      }, 3000);
+    });
+
+    document.addEventListener("click", function (event) {
+      if (event.target && event.target.id === "orderPreviewButton") {
+        document.getElementById("features").scrollIntoView({
+          behavior: "smooth"
+        });
+      }
+    });
+  </script>
+</body>
+</html>
