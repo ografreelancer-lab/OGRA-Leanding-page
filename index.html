@@ -1,289 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="OGRA AI is an intelligent website chatbot that answers customers, captures leads, and helps businesses grow."
-  />
-  <title>OGRA AI — Your Business, Always Ready</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+  <title>OGRA AI — Your Website Sales Assistant</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="site-shell">
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="OGRA AI home">
-        <span class="brand-mark">O</span>
-        <span>OGRA <em>AI</em></span>
+
+  <!-- INTRO: appears first -->
+  <section class="ogra-intro" id="ograIntro" aria-label="OGRA opening animation">
+    <div class="intro-grain"></div>
+
+    <div class="intro-stage">
+      <span class="intro-letter intro-o">O</span>
+      <span class="intro-letter intro-g">G</span>
+      <span class="intro-letter intro-r">R</span>
+      <span class="intro-letter intro-a">A</span>
+
+      <p class="intro-tagline">YOUR WEBSITE'S AI SALES ASSISTANT</p>
+    </div>
+
+    <div class="glass-dashboard" id="glassDashboard" aria-hidden="true">
+      <div class="glass-shine"></div>
+
+      <div class="glass-topbar">
+        <div class="glass-brand">
+          <span>O</span>
+          <strong>OGRA</strong>
+        </div>
+
+        <div class="glass-dots">
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+      </div>
+
+      <div class="glass-content">
+        <div class="glass-side">
+          <span class="glass-active"></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="glass-main">
+          <small>WELCOME TO OGRA</small>
+          <h2>Your AI is ready.</h2>
+
+          <div class="glass-stats">
+            <div>
+              <small>AI STATUS</small>
+              <strong>24/7</strong>
+            </div>
+
+            <div>
+              <small>BUSINESS MODE</small>
+              <strong>READY</strong>
+            </div>
+          </div>
+
+          <div class="glass-chart">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-crack crack-one"></div>
+      <div class="glass-crack crack-two"></div>
+      <div class="glass-crack crack-three"></div>
+    </div>
+
+    <div class="sound-choice" id="soundChoice">
+      <button id="soundButton" type="button">
+        <span>◌</span>
+        Click to enable intro sound
+      </button>
+    </div>
+
+    <div class="sand-layer" id="sandLayer" aria-hidden="true"></div>
+  </section>
+
+  <!-- REAL LANDING PAGE -->
+  <div class="site-reveal" id="siteReveal">
+    <header class="navbar">
+      <a class="logo" href="#">
+        <span class="logo-mark">O</span>
+        <span>OGRA</span>
+        <em>AI</em>
       </a>
 
-      <nav class="site-nav" aria-label="Primary navigation">
+      <nav class="nav-links">
+        <a href="#features">Features</a>
         <a href="#how-it-works">How it works</a>
-        <a href="#features">Capabilities</a>
-        <a href="#launch">Launch OGRA</a>
+        <a href="#demo">Demo</a>
       </nav>
 
-      <a class="header-cta" href="#launch">Build with OGRA <span>↗</span></a>
+      <a class="nav-button" href="#demo">Try demo</a>
     </header>
 
-    <main id="top">
-      <section class="hero-section">
+    <main>
+      <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">
-            <span class="eyebrow-dot"></span>
-            AI CUSTOMER INTELLIGENCE
-          </p>
+          <p class="eyebrow">YOUR WEBSITE'S AI SALES ASSISTANT</p>
 
           <h1>
-            Your business,<br />
-            <span>always ready.</span>
+            Turn visitor questions
+            <span>into more sales.</span>
           </h1>
 
-          <p class="hero-description">
-            OGRA AI turns your website into a helpful, always-on business assistant.
-            Answer questions, qualify leads, guide visitors, and help customers take action—
-            without keeping them waiting.
+          <p class="hero-text">
+            OGRA AI answers customer questions, explains your business, captures
+            leads, and guides visitors toward WhatsApp, booking, checkout, or the
+            next best step.
           </p>
 
           <div class="hero-actions">
-            <button id="openDemoButton" class="primary-button" type="button">
-              Explore OGRA demo
-              <span>↗</span>
-            </button>
+            <a class="button primary-button" href="#demo">
+              Try live demo <span>→</span>
+            </a>
 
-            <a class="text-link" href="#how-it-works">
+            <a class="button secondary-button" href="#how-it-works">
               See how it works
-              <span>↓</span>
             </a>
           </div>
 
-          <div class="trust-row">
-            <div class="trust-avatars" aria-label="Business teams using OGRA">
-              <span>O</span>
-              <span>G</span>
-              <span>R</span>
-              <span>A</span>
-            </div>
-
-            <p>
-              Built for businesses that want<br />
-              faster replies and smarter growth.
-            </p>
+          <div class="hero-points">
+            <span>✓ Instant business answers</span>
+            <span>✓ Smart customer guidance</span>
+            <span>✓ 24/7 availability</span>
           </div>
         </div>
 
-        <div class="hero-visual" aria-label="OGRA AI chatbot interface preview">
-          <div class="orb orb-one"></div>
-          <div class="orb orb-two"></div>
+        <div class="hero-preview">
+          <div class="blue-orb orb-one"></div>
+          <div class="blue-orb orb-two"></div>
 
-          <div class="chat-window">
-            <div class="chat-topbar">
+          <div class="chat-preview">
+            <div class="chat-header">
               <div class="chat-brand">
-                <span class="chat-logo">O</span>
+                <span class="bot-icon">◉</span>
+
                 <div>
                   <strong>OGRA AI</strong>
-                  <small><span></span> Ready to help</small>
+                  <small>Online now</small>
                 </div>
               </div>
 
-              <button class="more-button" type="button" aria-label="More options">•••</button>
+              <span class="more-icon">•••</span>
             </div>
 
             <div class="chat-body">
-              <div class="chat-message bot-message">
-                <span class="message-icon">O</span>
-                <p>
-                  Hi, I’m OGRA AI. I help businesses respond to website visitors instantly.
-                  What would you like to know?
-                </p>
+              <div class="message bot-message">
+                Hi! I’m OGRA AI. I help businesses give website visitors instant answers.
               </div>
 
-              <div class="chat-message user-message">
-                <p>What can OGRA do for my business?</p>
+              <div class="message user-message">
+                What can OGRA do for my business?
               </div>
 
-              <div class="chat-message bot-message">
-                <span class="message-icon">O</span>
-                <p>
-                  I can answer FAQs, explain your services, recommend the right option,
-                  capture leads, and guide customers to WhatsApp, booking, or checkout.
-                </p>
+              <div class="message bot-message recommendation">
+                <strong>OGRA helps visitors take action.</strong>
+                <small>
+                  Answer FAQs · Explain services · Capture leads · Guide customers to WhatsApp, booking, or checkout
+                </small>
+                <button type="button" id="orderPreviewButton">
+                  Explore OGRA features →
+                </button>
               </div>
 
-              <div class="chat-message bot-message compact-message">
-                <span class="message-icon">O</span>
-                <p>
-                  I also help you discover what visitors ask for most—so your business can improve faster.
-                </p>
+              <div class="chat-input-preview">
+                <span>Ask OGRA about your business...</span>
+                <b>➤</b>
               </div>
-
-              <div class="typing-row">
-                <span class="message-icon">O</span>
-                <span class="typing-dots"><i></i><i></i><i></i></span>
-              </div>
-            </div>
-
-            <div class="chat-input">
-              <span>Ask OGRA about your business...</span>
-              <button type="button" aria-label="Send message">↑</button>
-            </div>
-          </div>
-
-          <div class="floating-card insight-card">
-            <span class="floating-icon">✦</span>
-            <div>
-              <small>BUSINESS INSIGHT</small>
-              <strong>Visitors want instant answers.</strong>
-            </div>
-          </div>
-
-          <div class="floating-card activity-card">
-            <span class="pulse-ring"></span>
-            <div>
-              <small>OGRA STATUS</small>
-              <strong>Ready for your launch</strong>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="how-it-works" class="metrics-section">
-        <div class="metric-card metric-primary">
-          <span class="metric-label">YOUR AI ASSISTANT</span>
-          <strong>24/7</strong>
-          <p>Ready to answer visitors when your team is offline.</p>
-        </div>
+      <section class="business-strip">
+        <p>BUILT FOR ONLINE SHOPS, SERVICES, AND GROWING BUSINESSES</p>
 
-        <div class="metric-card">
-          <span class="metric-icon">◌</span>
-          <strong>Instant replies</strong>
-          <p>Give visitors useful answers while their interest is highest.</p>
-        </div>
-
-        <div class="metric-card">
-          <span class="metric-icon">↗</span>
-          <strong>Smart handoff</strong>
-          <p>Send serious customers to WhatsApp, booking, checkout, or your team.</p>
-        </div>
-
-        <div class="metric-card metric-live">
-          <span class="live-dot"></span>
-          <strong>Live data connects after launch</strong>
-          <p>Real user and conversation insights will appear when your server is connected.</p>
+        <div class="business-types">
+          <span>Shop</span>
+          <span>Store</span>
+          <span>Brand</span>
+          <span>Service</span>
         </div>
       </section>
 
-      <section id="features" class="feature-section">
-        <div class="feature-heading">
-          <p class="eyebrow">
-            <span class="eyebrow-dot"></span>
-            BUILT FOR REAL BUSINESS
+      <section class="features section-space" id="features">
+        <div class="section-title">
+          <p class="eyebrow">SMARTER CUSTOMER CONVERSATIONS</p>
+
+          <h2>Everything your website needs to help customers faster.</h2>
+
+          <p>
+            OGRA gives visitors useful, instant answers while helping your business
+            learn what customers care about most.
           </p>
-
-          <h2>
-            More than a chat box.<br />
-            <span>A growth assistant.</span>
-          </h2>
         </div>
 
         <div class="feature-grid">
           <article class="feature-card">
-            <span class="feature-number">01</span>
-            <h3>Knows your business</h3>
-            <p>Add your services, products, delivery details, pricing rules, and FAQs so OGRA can give relevant replies.</p>
+            <div class="feature-icon">✦</div>
+            <h3>Business-aware answers</h3>
+            <p>
+              Add your services, products, FAQs, pricing, delivery details, and
+              policies so OGRA can answer with the right context.
+            </p>
           </article>
 
           <article class="feature-card">
-            <span class="feature-number">02</span>
-            <h3>Guides every visitor</h3>
-            <p>Help people find the right service, product, answer, booking link, or next step without friction.</p>
+            <div class="feature-icon">◌</div>
+            <h3>Instant customer support</h3>
+            <p>
+              Help visitors understand your offer, solve common questions, and
+              find the right next step at any time.
+            </p>
           </article>
 
           <article class="feature-card">
-            <span class="feature-number">03</span>
-            <h3>Turns questions into action</h3>
-            <p>Move high-intent visitors toward WhatsApp, calls, forms, checkout, appointments, or your sales team.</p>
-          </article>
-
-          <article class="feature-card">
-            <span class="feature-number">04</span>
-            <h3>Shows what matters</h3>
-            <p>Learn what people ask, where they get stuck, and what they want—then improve your business decisions.</p>
+            <div class="feature-icon">↗</div>
+            <h3>Leads and insights</h3>
+            <p>
+              Capture high-intent customers and discover the questions, services,
+              and opportunities people care about most.
+            </p>
           </article>
         </div>
       </section>
 
-      <section id="launch" class="launch-section">
-        <div>
-          <p class="eyebrow">
-            <span class="eyebrow-dot"></span>
-            OGRA AI IS COMING TO LIFE
-          </p>
-
-          <h2>Ready to give your website a brain?</h2>
-
-          <p>
-            Start with a smarter customer experience. OGRA will help your visitors get answers,
-            discover your offer, and take the next step.
-          </p>
+      <section class="how-it-works section-space" id="how-it-works">
+        <div class="section-title">
+          <p class="eyebrow">SIMPLE SETUP</p>
+          <h2>Your AI business assistant in three steps.</h2>
         </div>
 
-        <button id="orderPreviewButton" class="primary-button launch-button" type="button">
-          Request early access
-          <span>↗</span>
-        </button>
+        <div class="steps-grid">
+          <article class="step-card">
+            <span class="step-number">01</span>
+            <h3>Connect your business</h3>
+            <p>Add your products, services, FAQs, delivery details, pricing, and policies.</p>
+          </article>
+
+          <article class="step-card">
+            <span class="step-number">02</span>
+            <h3>Customize OGRA</h3>
+            <p>Choose the assistant name, welcome message, colors, knowledge, and action links.</p>
+          </article>
+
+          <article class="step-card">
+            <span class="step-number">03</span>
+            <h3>Turn chats into action</h3>
+            <p>Guide serious visitors to WhatsApp, a form, a call, booking, checkout, or your team.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="demo-section section-space" id="demo">
+        <div class="demo-copy">
+          <p class="eyebrow">TRY THE DEMO</p>
+          <h2>Let OGRA show you how it helps.</h2>
+
+          <p>
+            OGRA will become a real AI chatbot for your website—ready to answer
+            customer questions and send visitors to the right business action.
+          </p>
+
+          <button class="button primary-button" id="openDemoButton" type="button">
+            Open demo chat <span>→</span>
+          </button>
+        </div>
+
+        <div class="stats-card">
+          <div>
+            <small>AI AVAILABILITY</small>
+            <strong>24/7</strong>
+            <span>Ready to help website visitors</span>
+          </div>
+
+          <div>
+            <small>LIVE DATA</small>
+            <strong>SOON</strong>
+            <span>Actual users and conversations appear after server setup</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="early-access">
+        <p class="eyebrow">EARLY ACCESS</p>
+
+        <h2>Build a website that never stops helping customers.</h2>
+
+        <p>
+          OGRA AI is being built for the next generation of online businesses.
+        </p>
+
+        <a class="button secondary-button" href="#demo">Join the demo</a>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <a class="brand" href="#top" aria-label="OGRA AI home">
-        <span class="brand-mark">O</span>
-        <span>OGRA <em>AI</em></span>
+    <footer>
+      <a class="logo" href="#">
+        <span class="logo-mark">O</span>
+        <span>OGRA</span>
+        <em>AI</em>
       </a>
 
-      <p>AI customer intelligence for ambitious businesses.</p>
-
-      <span>© 2026 OGRA AI</span>
+      <p>© 2026 OGRA AI. Built to help businesses sell smarter.</p>
     </footer>
-  </div>
-
-  <div id="introOverlay" class="intro-overlay" aria-hidden="true">
-    <div class="intro-noise"></div>
-
-    <div class="intro-word" aria-label="OGRA">
-      <span>O</span>
-      <span>G</span>
-      <span>R</span>
-      <span>A</span>
-    </div>
-
-    <div class="glass-stage">
-      <div class="glass-panel">
-        <div class="glass-shine"></div>
-        <div class="glass-grid"></div>
-        <div class="glass-title">OGRA</div>
-        <div class="glass-subtitle">AI CUSTOMER INTELLIGENCE</div>
-        <div class="glass-line"></div>
-        <div class="glass-detail">YOUR BUSINESS, ALWAYS READY</div>
-      </div>
-    </div>
-
-    <button id="soundButton" class="sound-button" type="button">
-      <span>◔</span>
-      Click to enable intro sound
-    </button>
-
-    <div id="sandLayer" class="sand-layer" aria-hidden="true"></div>
   </div>
 
   <script src="app.js"></script>
